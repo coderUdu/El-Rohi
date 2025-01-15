@@ -1,4 +1,4 @@
-/* styles.css */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,11 +8,11 @@ body {
     color: #333;
 }
 
-.container{
+.container {
     display: grid;
- align-items: center; 
- grid-template-columns: 3fr 3fr 3fr;
- column-gap: 10px;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
 }
 
 header {
@@ -22,38 +22,26 @@ header {
     text-align: center;
 }
 
-.headersz{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 40px;
+.headersz {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem; /* Adjust font size for better responsiveness */
     font-weight: bold;
     text-align: center;
-    color:brown;
-
+    color: brown;
 }
-.imglogo{
+
+.imglogo {
+    max-width: 100%;
+    height: auto;
     max-width: 200px;
-    position:static;
+    position: static;
 }
 
-.parent{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      padding: 2%;
-    }
-
-.child{
-    padding: 10%;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}    
-
-.navdisplay{
+.navdisplay {
     display: flex;
-    justify-content: center;
-    gap: 800px;
-    padding-left: 2.5%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5%;
 }
 
 .nav-menu {
@@ -79,62 +67,131 @@ header {
     color: #ffcc00;
 }
 
-.pinfo{
-    font-size: 25px;
+.pinfo {
+    font-size: 1.5rem; /* Adjust text size for better scaling */
     font-weight: bolder;
     text-align: center;
 }
+
 .section {
     padding: 2rem;
     margin: 1rem auto;
-    max-width: 600px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.sec{
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 800px;
+    max-width: 90%;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.about{
-    width:100%;
-    height: 100%;
+.sec {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about {
+    width: 100%;
+    height: auto;
     border-radius: 0.5rem;
-    }
+}
 
 h1, h2 {
     color: #003366;
     font-weight: bold;
-    text-align: justify;
+    text-align: center;
+    font-size: 1.75rem; /* Adjust h1, h2 font size */
 }
 
 footer {
     background: #003366;
     color: #fff;
     text-align: center;
-    padding: -1rem 0;
-    bottom: 0;
+    padding: 1rem 0;
     width: 100%;
 }
 
-ul{
-font-weight: bolder;
+ul {
+    font-weight: bolder;
 }
 
-.logi{
-width: 150px;
-height: 150px;
-display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2%;
+.logi {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
 }
 
-.pf{
+.pf {
     font-weight: bold;
+}
+
+/* Mobile (small devices) */
+@media (max-width: 600px) {
+    .navdisplay {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+    }
+
+    .parent {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+    }
+
+    .sec, .section {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .pinfo {
+        font-size: 1.2rem;
+    }
+
+    .headersz {
+        font-size: 2rem; /* Adjust header size for mobile */
+    }
+}
+
+/* Tablet (medium devices) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet */
+    }
+
+    .parent {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet */
+    }
+
+    .pinfo {
+        font-size: 1.3rem;
+    }
+
+    .sec, .section {
+        max-width: 90%;
+    }
+
+    .headersz {
+        font-size: 2.5rem;
+    }
+}
+
+/* Desktop (large devices) */
+@media (min-width: 769px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on desktop */
+    }
+
+    .parent {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on desktop */
+    }
+
+    .headersz {
+        font-size: 3rem;
+    }
 }
